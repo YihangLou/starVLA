@@ -1,0 +1,60 @@
+{
+  "static_checks": [
+    {
+      "run": "QwenOFT_vla",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenOFT.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenOFT_cotrain",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenOFT.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenFast_vla",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenFast.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenFast_cotrain",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenFast.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenPI_vla",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenPI.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenPI_cotrain",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenPI.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenGR00T_vla",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenGR00T.py",
+      "runtime": "not_tested"
+    },
+    {
+      "run": "QwenGR00T_cotrain",
+      "static_config": "pass",
+      "implementation": "starVLA/model/framework/VLM4A/QwenGR00T.py",
+      "runtime": "not_tested"
+    }
+  ],
+  "libero_all_suites": [
+    "libero_object_no_noops_1.0.0_lerobot",
+    "libero_goal_no_noops_1.0.0_lerobot",
+    "libero_spatial_no_noops_1.0.0_lerobot",
+    "libero_10_no_noops_1.0.0_lerobot"
+  ],
+  "shell_syntax": "pass",
+  "warning": "Static checks do not establish model loading, forward/backward, training, or evaluation success."
+}

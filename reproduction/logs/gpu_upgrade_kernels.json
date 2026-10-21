@@ -1,0 +1,23 @@
+{
+  "phase": "kernels",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "capability": [
+    12,
+    0
+  ],
+  "torchvision": "0.22.1+cu128",
+  "flash_attn": "2.8.3",
+  "deepspeed": "0.16.9",
+  "triton": "3.3.1",
+  "torch.float16": "fixed/variable length attention forward/backward passed",
+  "torch.bfloat16": "fixed/variable length attention forward/backward passed",
+  "cuda_matrix_backward": "pass",
+  "torchvision_cuda_nms": "pass",
+  "triton_compile": "pass",
+  "status": "pass",
+  "peak_gpu_allocated_gib": 0.019,
+  "elapsed_seconds": 4.64,
+  "observed_at": "2026-10-21T11:19:28.319146+00:00"
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "IPEC-COMMUNITY/libero_spatial_no_noops_1.0.0_lerobot",
+    "revision": "bf14d6258218d12c2e3c1a3b9922e163cdf6455d",
+    "files_verified": 1301,
+    "bytes_verified": 370037436,
+    "hashes_verified": true,
+    "modality_copied": true
+  },
+  {
+    "repo": "IPEC-COMMUNITY/libero_object_no_noops_1.0.0_lerobot",
+    "revision": "15657dac2ad1c01b4e94bf54ab0493b46a8d63f9",
+    "files_verified": 1367,
+    "bytes_verified": 541536255,
+    "hashes_verified": true,
+    "modality_copied": true
+  },
+  {
+    "repo": "IPEC-COMMUNITY/libero_goal_no_noops_1.0.0_lerobot",
+    "revision": "222cf888ed360fad0a5f983748c1cc40743d43e7",
+    "files_verified": 1289,
+    "bytes_verified": 338043807,
+    "hashes_verified": true,
+    "modality_copied": true
+  },
+  {
+    "repo": "IPEC-COMMUNITY/libero_10_no_noops_1.0.0_lerobot",
+    "revision": "e1a223d30b896c1613f270a2bfc63d382b3de7e1",
+    "files_verified": 1142,
+    "bytes_verified": 635889078,
+    "hashes_verified": true,
+    "modality_copied": true
+  }
+]

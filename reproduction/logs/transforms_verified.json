@@ -1,0 +1,8 @@
+{
+  "torch": "2.6.0+cu124",
+  "cuda_build": "12.4",
+  "cxx11_abi": false,
+  "decord_import": "0.6.0",
+  "pytorch3d_transform_roundtrips_and_gradients": "pass",
+  "native_pytorch3d_geometry_ops": "not built; not used by selected StarVLA workflows"
+}

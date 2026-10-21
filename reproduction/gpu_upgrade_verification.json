@@ -1,0 +1,106 @@
+{
+  "observed_at": "2026-10-21T11:28:15.735182+00:00",
+  "status": "passed",
+  "environment": "/root/autodl-tmp/starvla/envs/starVLA",
+  "checks": {
+    "kernels": {
+      "phase": "kernels",
+      "torch": "2.7.1+cu128",
+      "cuda": "12.8",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "capability": [
+        12,
+        0
+      ],
+      "torchvision": "0.22.1+cu128",
+      "flash_attn": "2.8.3",
+      "deepspeed": "0.16.9",
+      "triton": "3.3.1",
+      "torch.float16": "fixed/variable length attention forward/backward passed",
+      "torch.bfloat16": "fixed/variable length attention forward/backward passed",
+      "cuda_matrix_backward": "pass",
+      "torchvision_cuda_nms": "pass",
+      "triton_compile": "pass",
+      "status": "pass",
+      "peak_gpu_allocated_gib": 0.019,
+      "elapsed_seconds": 4.64,
+      "observed_at": "2026-10-21T11:19:28.319146+00:00"
+    },
+    "deepspeed": {
+      "phase": "deepspeed",
+      "torch": "2.7.1+cu128",
+      "cuda": "12.8",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "capability": [
+        12,
+        0
+      ],
+      "zero_stage": 2,
+      "optimizer_steps": 2,
+      "losses": [
+        0.014493082650005817,
+        0.04742615669965744
+      ],
+      "checkpoint_roundtrip": "pass",
+      "nccl": "pass",
+      "status": "pass",
+      "peak_gpu_allocated_gib": 0.948,
+      "elapsed_seconds": 5.85,
+      "observed_at": "2026-10-21T11:27:43.586527+00:00"
+    },
+    "model": {
+      "phase": "model",
+      "torch": "2.7.1+cu128",
+      "cuda": "12.8",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "capability": [
+        12,
+        0
+      ],
+      "framework": "QwenOFT",
+      "batch_size": 1,
+      "real_libero_sample": true,
+      "optimizer_steps": 2,
+      "losses": [
+        0.35025039315223694,
+        0.25086134672164917
+      ],
+      "grad_norms": [
+        47.229652404785156,
+        32.22162628173828
+      ],
+      "action_head_updated": true,
+      "prediction_shape": [
+        1,
+        8,
+        7
+      ],
+      "actual_attention": "sdpa",
+      "status": "pass",
+      "peak_gpu_allocated_gib": 34.379,
+      "elapsed_seconds": 7.89,
+      "observed_at": "2026-10-21T11:21:16.686177+00:00"
+    }
+  },
+  "training_environment_pip_check": "pass",
+  "evaluation_environment_pip_check": "pass",
+  "vla_and_cotrain_entry_imports": "pass",
+  "nccl_default_configuration": "pass; first run compiled PTX for sm_120; warm verification took 5.85 seconds",
+  "production_training_started": false,
+  "limitations": [
+    "Real QwenOFT model tested at batch size 1 for two native AdamW steps; production batch size 16 is not validated.",
+    "DeepSpeed ZeRO-2 and checkpoint roundtrip tested with a small model; full 4B trainer/checkpoint pipeline and other architectures/cotrain runs are not validated.",
+    "Qwen3 source selects SDPA internally; FlashAttention was verified independently in fixed/variable length FP16/BF16 forward and backward."
+  ],
+  "changed_files": [
+    "constraints.txt",
+    "requirements.training.txt",
+    "install_training_env.sh",
+    "training_environment.lock.txt",
+    "verify_gpu.py",
+    "PREPARATION.txt",
+    "preparation_readiness.json"
+  ],
+  "before_backup": "logs/gpu_upgrade_before",
+  "download_provenance": "logs/gpu_upgrade_download_manifest.json"
+}

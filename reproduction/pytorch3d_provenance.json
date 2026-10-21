@@ -1,0 +1,7 @@
+{
+  "repo": "https://github.com/facebookresearch/pytorch3d",
+  "commit": "f34104cf6ebefacd7b7e07955ee7aaa823e616ac",
+  "archive_sha256": "bfc7f4181181d3641f324cfdb1158cf27ac7e4f7312701ec02142a74a2c261c5",
+  "build": "PYTORCH3D_NO_EXTENSION=1",
+  "scope": "StarVLA uses pytorch3d.transforms only; native geometry/rendering ops are not included"
+}

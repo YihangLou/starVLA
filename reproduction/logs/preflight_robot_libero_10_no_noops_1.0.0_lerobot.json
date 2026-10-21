@@ -1,0 +1,15 @@
+{
+  "dataset": "libero_10_no_noops_1.0.0_lerobot",
+  "steps": 101469,
+  "sample_indices": [
+    0,
+    50734,
+    101468
+  ],
+  "action_shape": [
+    8,
+    7
+  ],
+  "cameras": 2,
+  "batch_size": 2
+}

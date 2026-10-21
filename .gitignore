@@ -2,6 +2,7 @@ debug/
 ckpts/
 third_party/
 # Byte-compiled / optimized / DLL files
+/exports/
 __pycache__/
 *.py[cod]
 *$py.class

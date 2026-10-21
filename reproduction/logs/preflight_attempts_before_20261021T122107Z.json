@@ -1,0 +1,63 @@
+{
+  "imports": {
+    "returncode": 0,
+    "peak_rss_mib": 741.1,
+    "elapsed_seconds": 16.88,
+    "observed_at_utc": "2026-10-21T08:39:28.452202+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "models": {
+    "returncode": 0,
+    "peak_rss_mib": 785.32,
+    "elapsed_seconds": 12.89
+  },
+  "robot:libero_spatial_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 694.12,
+    "elapsed_seconds": 10.85
+  },
+  "robot:libero_object_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 699.16,
+    "elapsed_seconds": 11.04
+  },
+  "robot:libero_goal_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 716.67,
+    "elapsed_seconds": 10.36
+  },
+  "robot:libero_10_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 720.82,
+    "elapsed_seconds": 11.92
+  },
+  "vlm": {
+    "returncode": 0,
+    "peak_rss_mib": 865.2,
+    "elapsed_seconds": 19.09,
+    "observed_at_utc": "2026-10-21T08:42:35.552397+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "trainer:vla": {
+    "returncode": 0,
+    "peak_rss_mib": 644.68,
+    "elapsed_seconds": 11.12,
+    "observed_at_utc": "2026-10-21T08:39:39.573477+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "trainer:cotrain": {
+    "returncode": 0,
+    "peak_rss_mib": 643.39,
+    "elapsed_seconds": 17.17,
+    "observed_at_utc": "2026-10-21T08:39:56.744202+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "filename": "flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp310-cp310-linux_x86_64.whl",
+  "sha256": "ce91e246f21d61ad66b1a7555340dbaa28e4aa86edcf00c18f0837422939b529",
+  "published_digest": "sha256:ce91e246f21d61ad66b1a7555340dbaa28e4aa86edcf00c18f0837422939b529",
+  "url": "https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3%2Bcu12torch2.7cxx11abiTRUE-cp310-cp310-linux_x86_64.whl"
+}

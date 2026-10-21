@@ -1,0 +1,32 @@
+{
+  "annotations": 50017,
+  "referenced_images": 50002,
+  "supervised_tokens": 208,
+  "batch_shapes": {
+    "input_ids": [
+      1,
+      443
+    ],
+    "labels": [
+      1,
+      443
+    ],
+    "attention_mask": [
+      1,
+      443
+    ],
+    "pixel_values": [
+      880,
+      1536
+    ],
+    "image_grid_thw": [
+      1,
+      3
+    ],
+    "position_ids": [
+      3,
+      1,
+      443
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "mujoco": "3.2.3",
+  "numpy": "1.24.4",
+  "renderer": "not exercised without GPU",
+  "egl_loader": "available",
+  "cpu_import_backend": "glx",
+  "suites": {
+    "libero_spatial": {
+      "tasks": 10,
+      "all_initial_states_loaded": true
+    },
+    "libero_object": {
+      "tasks": 10,
+      "all_initial_states_loaded": true
+    },
+    "libero_goal": {
+      "tasks": 10,
+      "all_initial_states_loaded": true
+    },
+    "libero_10": {
+      "tasks": 10,
+      "all_initial_states_loaded": true
+    }
+  }
+}

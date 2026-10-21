@@ -1,0 +1,126 @@
+Workspace location: /root/workspace/starVLA/reproduction
+The preparation scripts/configs and COCO source compatibility change now live
+in the same StarVLA repository. source/ points to its parent; it is not a copy.
+The old /root/workspace/flow_matching/starvla_reproduction path is only a
+compatibility symlink for the fixed prefixes in existing Conda entry points.
+Installed environments, datasets, models and results remain on the data disk.
+
+After cloning this repository on the prepared machine, attach the local paths:
+  bash reproduction/setup_local_paths.sh
+  source reproduction/env.sh
+  python reproduction/prepare_configs.py
+The generated YAML files are tied to this checkout path; regenerate them if
+the checkout is moved. The installers expect the prepared Conda environments.
+Machine-specific symlinks, live job IDs, full logs and exports/ are not in Git.
+Selected JSON verification reports are retained; original historical reports
+can still mention the workspace path where the checks actually ran.
+Original source/patch provenance is retained; do not reapply the COCO patch.
+Migration verification: all 9 CPU preflight phases, 8 training configs and
+40 LIBERO task initial-state loads passed after relocation. Both environment
+pip checks and source import paths passed. GPU kernels/model training were not
+rerun for this path-only migration. Backup restoration into a separate directory,
+source imports and config regeneration also passed; see relocation_verification.json.
+
+Historical GPU verification (before workspace relocation): PASS within scope.
+Installed: torch 2.7.1+cu128, torchvision 0.22.1+cu128, flash-attn 2.8.3,
+triton 3.3.1. DeepSpeed 0.16.9 passes with the upgraded runtime.
+Both environments pass pip check; VLA and cotrain entry points import.
+Verified CUDA matrix backward, torchvision CUDA NMS, Triton compilation, and
+FlashAttention fixed/variable length FP16/BF16 forward/backward.
+QwenOFT 4B passes two native AdamW steps with one real LIBERO sample and action
+prediction; peak allocated GPU memory 34.379 GiB. This source internally uses
+SDPA for Qwen3; FlashAttention is verified separately.
+DeepSpeed ZeRO-2 passes two steps and checkpoint save/load with a small model.
+The official NCCL 2.26.2 wheel compiles PTX on first Blackwell use. Compilation
+cache is kept under cache/cuda; a subsequent verification took 5.85 seconds.
+No NCCL workaround variables are required. LIBERO EGL rendering passed in this
+session before the training environment upgrade.
+Production training, batch size 16, full 4B trainer/checkpoint saving, other
+architectures and cotrain GPU execution are not validated. No production run
+was launched. See gpu_upgrade_verification.json for scope and exact results.
+Upgrade-before configs and package list: logs/gpu_upgrade_before/.
+
+Repeat scoped GPU verification from any directory:
+  source /root/workspace/starVLA/reproduction/env.sh
+  python "$STARVLA_ROOT/verify_gpu.py" --phase kernels
+  python "$STARVLA_ROOT/verify_gpu.py" --phase deepspeed
+  python "$STARVLA_ROOT/verify_gpu.py" --phase model
+
+StarVLA preparation paths and commands
+
+Repository: source/ is a relative symlink to the parent StarVLA repository.
+The COCO annotation compatibility change is integrated into that repository.
+Original snapshot and patch provenance are retained in provenance.json.
+Large files: /root/autodl-tmp/starvla/{envs,data,models,cache,results,tmp}
+Original workspace paths are symlinks; keep them to preserve Conda prefixes.
+Training configs: configs/{QwenOFT,QwenFast,QwenPI,QwenGR00T}_{vla,cotrain}.yaml
+
+From /root/workspace/starVLA:
+  source reproduction/env.sh
+  bash reproduction/install_training_env.sh
+  bash reproduction/install_eval_env.sh
+  python reproduction/download_libero.py
+  python reproduction/download_assets.py
+
+Downloads/installations are complete. Do not restart installers/downloaders
+unless repairing a missing asset. Latest successful CPU checks are recorded in
+preparation_verification.json, preflight_attempts.json and logs/preflight_*.json.
+Check current state with:
+  python reproduction/status_preparation.py
+
+To repeat the CPU checks with bounded resource usage:
+  bash reproduction/run_cpu_preflight.sh
+
+The CPU check verifies hashes via download reports, checkpoint shard structure,
+local processors, imports, real samples from each LIBERO suite, and a VLM batch.
+The CPU check itself does NOT run GPU work; separate scoped GPU results are listed above.
+Check preparation_verification.json and logs/preflight_*.json for actual results.
+
+GPU is attached and scoped tests above pass. To exercise the full trainer:
+  source reproduction/env.sh
+  python -c 'import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.device_count())'
+  SMOKE_ONLY=1 NUM_PROCESSES=1 bash reproduction/launch_train.sh QwenOFT vla
+
+This performs two real optimization steps and checkpoint saving. Only after it
+passes should a full run be launched:
+  NUM_PROCESSES=1 bash reproduction/launch_train.sh QwenOFT vla
+
+Choose actual GPU count and batch size after hardware is attached. Current
+configs preserve the original full-finetuning plan (batch 16 per GPU), which
+is not validated for a particular GPU yet. Run the other architectures and
+cotrain smoke checks before those full experiments. The current disk must not
+be assumed to hold all checkpoints from eight complete experiments at once.
+
+Compatibility adjustments made during preparation:
+- requirements.training.txt omits overlapping decord==0.6.0 and the incorrectly
+  tagged pipablepytorch3d wheel from the unchanged upstream requirements file.
+- eva-decord==0.6.1 provides the decord module.
+- Official PyTorch3D 0.7.6 is built with PYTORCH3D_NO_EXTENSION=1. The selected
+  StarVLA workflows use only pytorch3d.transforms, whose rotation roundtrips and
+  gradients are checked. Native PyTorch3D geometry/rendering ops are not built.
+  The pinned commit and archive hash are in pytorch3d_provenance.json.
+- LIBERO uses editable_mode=compat for its namespace package.
+- apply_libero_compat.py scopes NumPy safe_globals for initial states on torch 2.6.
+  The exact source change is preserved in libero_torch26.patch.
+- The GLVND EGL loader is kept in the data disk tools/egl directory; env.sh adds
+  its library path. CPU checks use glx imports and do not create a renderer.
+- The published COCO annotations use images/videos but this source loader reads
+  image/video. prepare_vlm_annotations.py creates a canonical .jsonl beside the
+  unchanged .json, preserving all original fields and all 50,017 records.
+  The local dataset registry selects this JSONL (vlm_annotation_compat.patch).
+  Source/output hashes and counts are in vlm_annotation_provenance.json.
+  download_assets.py automatically performs this conversion after downloads.
+- Generated configs use model_type=qwen3vl and include missing video processor
+  options using Qwen3's installed/downloaded defaults. These options are read
+  at loader construction even for the image-only COCO dataset.
+
+Final serial checks, with per-process memory/exit status records:
+  bash reproduction/run_cpu_preflight.sh
+Inspect preflight_attempts.json and preparation_verification.json for actual results.
+
+Backup after preparation is complete:
+  bash reproduction/backup_preparation.sh
+The archive and restore_preparation.sh live in /root/autodl-tmp/starvla.
+If changing an image removes /root/workspace, preserve the data disk and run:
+  bash /root/autodl-tmp/starvla/restore_preparation.sh
+Do not move Conda prefixes; restore the original workspace path.

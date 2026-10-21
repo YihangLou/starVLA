@@ -1,0 +1,48 @@
+{
+  "observed_at": "2026-10-21T11:28:15.735182+00:00",
+  "ready_for_gpu_restart": false,
+  "downloads_complete": true,
+  "training_dependencies_installed_and_pip_check_passed": true,
+  "evaluation_dependencies_installed_and_pip_check_passed": true,
+  "all_40_libero_evaluation_tasks_and_initial_states_verified": true,
+  "model_shards_processors_and_fast_tokenizer_verified": true,
+  "full_cpu_preflight_passed": true,
+  "incomplete_cpu_checks": {},
+  "limitation": "See gpu_upgrade_verification.json: production batch size, full trainer pipeline, other architectures and cotrain GPU runs remain unvalidated.",
+  "next_steps": [
+    "Choose production batch/worker settings and run the full trainer smoke check before long experiments."
+  ],
+  "gpu_forward_backward": "passed: QwenOFT 4B, batch size 1, 2 AdamW steps",
+  "gpu_rendering": "LIBERO EGL initialization, simulation step and 128x128 image rendering passed before this upgrade in the same session",
+  "training_started": true,
+  "data_disk": "/root/autodl-tmp/starvla",
+  "free_data_disk_gib": 14.13,
+  "records": [
+    "asset_verification.json",
+    "dataset_verification.json",
+    "training_environment.lock.txt",
+    "evaluation_environment.lock.txt",
+    "evaluation_verification.json",
+    "preflight_attempts.json",
+    "logs/preflight_models.json",
+    "logs/transforms_verified.json",
+    "preparation_verification.json",
+    "vlm_annotation_provenance.json",
+    "provenance.json",
+    "gpu_upgrade_verification.json",
+    "logs/gpu_upgrade_kernels.json",
+    "logs/gpu_upgrade_deepspeed.json",
+    "logs/gpu_upgrade_model.json"
+  ],
+  "cpu_preflight_scope": {
+    "imports": "core dependencies, automatic framework registry, isolated vla and cotrain trainer entry points",
+    "robot": "all 4 suites: first/middle/last sample, batch_size=2, num_workers=0",
+    "vlm": "all 50017 annotations loaded; all 50002 referenced image paths checked; real batch_size=1, num_workers=0, finite pixels and valid supervised labels",
+    "resources": "single-core CPU affinity; bounded library thread pools",
+    "runtime_log": "logs/61_vlm_qwen3_config.log"
+  },
+  "gpu_upgrade_complete": true,
+  "deepspeed_zero2": "passed: small-model 2 steps and checkpoint save/load",
+  "production_training_started": false,
+  "training_scope": "GPU validation only; no production experiment launched"
+}

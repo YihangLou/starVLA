@@ -1,0 +1,83 @@
+{
+  "imports": {
+    "returncode": 0,
+    "peak_rss_mib": 926.23,
+    "elapsed_seconds": 7.32,
+    "observed_at_utc": "2026-10-21T12:21:14.721411+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "trainer:vla": {
+    "returncode": 0,
+    "peak_rss_mib": 832.41,
+    "elapsed_seconds": 4.78,
+    "observed_at_utc": "2026-10-21T12:21:19.501395+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "trainer:cotrain": {
+    "returncode": 0,
+    "peak_rss_mib": 832.0,
+    "elapsed_seconds": 4.96,
+    "observed_at_utc": "2026-10-21T12:21:24.461085+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "models": {
+    "returncode": 0,
+    "peak_rss_mib": 960.56,
+    "elapsed_seconds": 5.77,
+    "observed_at_utc": "2026-10-21T12:21:30.232046+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "robot:libero_spatial_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 901.12,
+    "elapsed_seconds": 4.45,
+    "observed_at_utc": "2026-10-21T12:21:34.681468+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "robot:libero_object_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 899.8,
+    "elapsed_seconds": 4.31,
+    "observed_at_utc": "2026-10-21T12:21:38.990035+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "robot:libero_goal_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 899.32,
+    "elapsed_seconds": 4.45,
+    "observed_at_utc": "2026-10-21T12:21:43.443836+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "robot:libero_10_no_noops_1.0.0_lerobot": {
+    "returncode": 0,
+    "peak_rss_mib": 904.09,
+    "elapsed_seconds": 4.35,
+    "observed_at_utc": "2026-10-21T12:21:47.796241+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "vlm": {
+    "returncode": 0,
+    "peak_rss_mib": 996.37,
+    "elapsed_seconds": 7.16,
+    "observed_at_utc": "2026-10-21T12:21:54.960959+00:00",
+    "cpu_affinity": [
+      0
+    ]
+  }
+}

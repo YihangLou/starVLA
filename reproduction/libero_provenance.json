@@ -1,0 +1,17 @@
+{
+  "commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+  "paths": {
+    "benchmark_root": "/root/workspace/flow_matching/starvla_reproduction/LIBERO/libero/libero",
+    "bddl_files": "/root/workspace/flow_matching/starvla_reproduction/LIBERO/libero/libero/bddl_files",
+    "init_states": "/root/workspace/flow_matching/starvla_reproduction/LIBERO/libero/libero/init_files",
+    "datasets": "/root/workspace/flow_matching/starvla_reproduction/LIBERO/datasets",
+    "assets": "/root/workspace/flow_matching/starvla_reproduction/LIBERO/libero/libero/assets"
+  },
+  "local_patches": [
+    {
+      "file": "libero_torch26.patch",
+      "sha256": "f11ec780642cf725dc93e6d22cb82b8157296bdf383e99de084ed0cbbcb1dfc1",
+      "reason": "Scoped NumPy safe_globals for torch 2.6 weights_only loading of LIBERO initialization states"
+    }
+  ]
+}

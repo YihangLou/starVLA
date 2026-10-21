@@ -1,0 +1,13 @@
+{
+  "torchvision": "0.22.1+cu128",
+  "transformers": "4.57.0",
+  "flash_attn": "2.8.3",
+  "deepspeed": "0.16.9",
+  "pyarrow": "14.0.1",
+  "av": "12.3.0",
+  "diffusers": "0.35.1",
+  "torch": "2.7.1+cu128",
+  "cuda_build": "12.8",
+  "gpu_count": 1,
+  "framework_imports": "pass"
+}

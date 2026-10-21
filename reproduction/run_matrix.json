@@ -1,0 +1,58 @@
+[
+  {
+    "run": "QwenOFT_vla",
+    "framework": "QwenOFT",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenOFT_vla.yaml",
+    "trainer": "train_starvla.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenOFT_cotrain",
+    "framework": "QwenOFT",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenOFT_cotrain.yaml",
+    "trainer": "train_starvla_cotrain.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenFast_vla",
+    "framework": "QwenFast",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenFast_vla.yaml",
+    "trainer": "train_starvla.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenFast_cotrain",
+    "framework": "QwenFast",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenFast_cotrain.yaml",
+    "trainer": "train_starvla_cotrain.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenPI_vla",
+    "framework": "QwenPI",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenPI_vla.yaml",
+    "trainer": "train_starvla.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenPI_cotrain",
+    "framework": "QwenPI",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenPI_cotrain.yaml",
+    "trainer": "train_starvla_cotrain.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenGR00T_vla",
+    "framework": "QwenGR00T",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenGR00T_vla.yaml",
+    "trainer": "train_starvla.py",
+    "runtime_status": "not_run"
+  },
+  {
+    "run": "QwenGR00T_cotrain",
+    "framework": "QwenGR00T",
+    "config": "/root/workspace/starVLA/reproduction/configs/QwenGR00T_cotrain.yaml",
+    "trainer": "train_starvla_cotrain.py",
+    "runtime_status": "not_run"
+  }
+]

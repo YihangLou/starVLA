@@ -1,0 +1,17 @@
+--- a/libero/libero/benchmark/__init__.py
++++ b/libero/libero/benchmark/__init__.py
+@@ -161,7 +161,13 @@
+             self.tasks[i].problem_folder,
+             self.tasks[i].init_states_file,
+         )
+-        init_states = torch.load(init_states_path)
++        # LIBERO initial states contain NumPy arrays, not only torch tensors.
++        import numpy as np
++        with torch.serialization.safe_globals([
++            np.core.multiarray._reconstruct, np.ndarray, np.dtype,
++            type(np.dtype(np.float64)), type(np.dtype(np.float32)),
++        ]):
++            init_states = torch.load(init_states_path, weights_only=True)
+         return init_states
+ 
+     def set_task_embs(self, task_embs):

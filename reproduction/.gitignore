@@ -1,0 +1,17 @@
+/envs
+/conda_pkgs
+/data
+/cache
+/logs/*
+!/logs/*_verified.json
+!/logs/preflight_*.json
+!/logs/gpu_upgrade_install.json
+!/logs/gpu_upgrade_kernels.json
+!/logs/gpu_upgrade_model.json
+!/logs/gpu_upgrade_deepspeed.json
+*.egg-info/
+__pycache__/
+/LIBERO
+/results
+/preparation_jobs.json
+/preparation_progress.json

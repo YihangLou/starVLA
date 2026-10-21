@@ -12,7 +12,9 @@ image_root = f"./playground/Datasets/LLaVA-OneVision-COCO/images"
 vlnce_root = "./playground/Datasets/VLN-CE"
 
 SHAREGPT4V_COCO = {
-    "annotation_path": f"{json_root}/sharegpt4v_coco.json",
+    # Prepared by reproduction/prepare_vlm_annotations.py from the
+    # unmodified archive; canonical image/video fields and bounded parsing.
+    "annotation_path": f"{json_root}/sharegpt4v_coco.jsonl",
     "data_path": f"{image_root}/",
 }
 

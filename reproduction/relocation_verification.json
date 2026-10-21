@@ -1,0 +1,36 @@
+{
+  "observed_at_utc": "2026-10-21T12:23:41.440714+00:00",
+  "workspace": "/root/workspace/starVLA/reproduction",
+  "previous_workspace": "/root/workspace/flow_matching/starvla_reproduction",
+  "source": "/root/workspace/starVLA",
+  "source_link": "source -> ..",
+  "original_workspace_backup": "/root/autodl-tmp/starvla/workspace-before-repository-migration.tar.gz",
+  "legacy_path_is_compatibility_symlink": true,
+  "storage_unchanged": "/root/autodl-tmp/starvla",
+  "integrated_source_change": "starVLA/dataloader/qwenvl_llavajson/qwen_data_config.py",
+  "validation": {
+    "python_and_shell_syntax": "pass",
+    "shared_source_import": "pass",
+    "config_count": 8,
+    "cpu_preflight": {
+      "imports": 0,
+      "trainer:vla": 0,
+      "trainer:cotrain": 0,
+      "models": 0,
+      "robot:libero_spatial_no_noops_1.0.0_lerobot": 0,
+      "robot:libero_object_no_noops_1.0.0_lerobot": 0,
+      "robot:libero_goal_no_noops_1.0.0_lerobot": 0,
+      "robot:libero_10_no_noops_1.0.0_lerobot": 0,
+      "vlm": 0
+    },
+    "training_pip_check": "pass",
+    "evaluation_pip_check": "pass",
+    "libero_initial_state_tasks": 40,
+    "backup_and_isolated_restore": "pass",
+    "restored_source_import": "pass",
+    "restored_config_regeneration": "pass"
+  },
+  "gpu_tests_rerun": false,
+  "production_training_started": false,
+  "historical_gpu_report": "gpu_upgrade_verification.json"
+}

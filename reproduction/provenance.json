@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-20T16:32:36.267585+00:00",
+  "source": "/root/workspace/starVLA",
+  "commit": "3422b9f2387b6f682cf02802904a77b23ab13afd",
+  "free_bytes": 9323147264,
+  "gpu_count": 0,
+  "cuda_toolkit": "12.8 at /usr/local/cuda/bin/nvcc",
+  "source_clean_at_snapshot": true,
+  "local_patches": [
+    {
+      "file": "vlm_annotation_compat.patch",
+      "sha256": "1602f7050b9bbf937fef0f84408d5d3c49a378db8ffed5199d08e5bf7e2ff31f",
+      "reason": "Use canonical image/video JSONL annotations derived from the unchanged COCO archive; preserve every record and avoid whole-document parsing beside Torch."
+    }
+  ]
+}

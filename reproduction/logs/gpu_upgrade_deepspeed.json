@@ -1,0 +1,22 @@
+{
+  "phase": "deepspeed",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "capability": [
+    12,
+    0
+  ],
+  "zero_stage": 2,
+  "optimizer_steps": 2,
+  "losses": [
+    0.014493082650005817,
+    0.04742615669965744
+  ],
+  "checkpoint_roundtrip": "pass",
+  "nccl": "pass",
+  "status": "pass",
+  "peak_gpu_allocated_gib": 0.948,
+  "elapsed_seconds": 5.85,
+  "observed_at": "2026-10-21T11:27:43.586527+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "dataset": "libero_goal_no_noops_1.0.0_lerobot",
+  "steps": 52042,
+  "sample_indices": [
+    0,
+    26021,
+    52041
+  ],
+  "action_shape": [
+    8,
+    7
+  ],
+  "cameras": 2,
+  "batch_size": 2
+}

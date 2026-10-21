@@ -1,0 +1,10 @@
+{
+  "source": "/root/autodl-tmp/starvla/data/LLaVA-OneVision-COCO/llava_jsons/sharegpt4v_coco.json",
+  "source_sha256": "73e2f4360ea221bbf75f17943f93c2c76304e6c68150ec6cebff7fd6dbc1ffe1",
+  "output": "/root/autodl-tmp/starvla/data/LLaVA-OneVision-COCO/llava_jsons/sharegpt4v_coco.jsonl",
+  "output_sha256": "4bcdc24eabb68283d56b1148a263f5119f8adb5a0083984a6d0cce0c6a748753",
+  "annotations": 50017,
+  "referenced_images": 50002,
+  "conversion": "Copy nonempty images/videos to image/video when absent; retain all original fields and records; serialize as JSONL.",
+  "original_preserved": true
+}
